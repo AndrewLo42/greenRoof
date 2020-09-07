@@ -1,6 +1,15 @@
 import React from 'react';
 
 class Home extends React.Component {
+  constructor(props) {
+    super(props);
+    this.goToPetition = this.goToPetition.bind(this);
+  }
+
+  goToPetition() {
+    this.props.history.push('/sign-petition');
+  }
+
   render() {
     return (
       <>
@@ -14,9 +23,15 @@ class Home extends React.Component {
           <div className="row">
             <div className="inner-card">
               <h1>Sign the Petition</h1>
+              <div>{this.props.signees.length} people have signed</div>
+              <button onClick={this.goToPetition} className="transforming-button home-petition-button">
+                <a className="text-center button-link" href="/sign-petition">Act Now</a></button>
             </div>
             <div className="inner-card">
-              <div>Sign the Petition</div>
+              <h1>What we&apos;re about</h1>
+              <div>Find out about green roofs</div>
+              <button onClick={this.goToPetition} className="transforming-button home-petition-button">
+                <a className="text-center button-link" href="/sign-petition">Learn More</a></button>
             </div>
           </div>
         </div>
@@ -26,12 +41,16 @@ class Home extends React.Component {
         <div className="text-center home-container">
 
           <main className="home-text">
-            <p>
+            <div className="p-section">
+              <p>
             UCSB Green Roofs is a campaign focused on making our campus more sustainable by incorporating green roofs on all applicable buildings.
-            </p>
-            <p>
+              </p>
+              <p>
             The vegetation on the roofs will range from edible gardens to simple grasses and plants that can be used as an outdoor classroom.
-            </p>
+              </p>
+
+            </div>
+            <img className="ucsb-banner-img" src="./images/ucsbBanner.jpg" alt="UCSB banner" ></img>
           </main>
         </div>
       </>
