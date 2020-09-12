@@ -8,7 +8,13 @@ function Header() {
           <img className="header-img" src="./images/leafImg.png" href="/" />
         </a>
       </div>
-      <div className="links-container">
+      <div className="links-container mobile-header" id="menuToggle">
+        <input type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div className="links-container full-screen-header">
         <a className="header-link" href="/about">About</a>
         <a className="header-link" href="/sign-petition">Petition</a>
       </div>
